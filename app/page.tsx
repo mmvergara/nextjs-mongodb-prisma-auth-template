@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="flex items-center justify-center flex-col gap-4 pt-[10vh] text-white">
@@ -5,26 +7,13 @@ export default function Home() {
         NextJS + MongoDB + Prisma + Auth Template
       </h1>
 
-      <form className="flex flex-col gap-2">
-        <input
-          type="text"
-          placeholder="Enter your name"
-          className="p-2 rounded-md outline-none drop-shadow-sm bg-[hsl(0,0%,10%)]"
-        />
+      <Link href="/sign-in" className="p-2 bg-[hsl(0,0%,7%)] rounded-sm">
+        Sign In
+      </Link>
 
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="p-2 rounded-md outline-none drop-shadow-sm bg-[hsl(0,0%,10%)]"
-        />
-
-        <input
-          type="password"
-          placeholder="Enter your password"
-          className="p-2 rounded-md outline-none drop-shadow-sm bg-[hsl(0,0%,10%)]"
-        />
-        <button className="p-2 bg-[hsl(0,0%,7%)] rounded-sm">Submit</button>
-      </form>
+      <Link href="/sign-up" className="p-2 bg-[hsl(0,0%,7%)] rounded-sm">
+        Sign Up
+      </Link>
     </main>
   );
 }
