@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-mongodb-prisma-template",
+  "name": "nextjs-mongodb-prisma-auth-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
