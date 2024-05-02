@@ -11,12 +11,15 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.0.0",
     "@prisma/client": "^5.13.0",
+    "bcryptjs": "^2.4.3",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.23.5"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
