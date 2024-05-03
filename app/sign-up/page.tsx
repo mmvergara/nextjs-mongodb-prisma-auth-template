@@ -2,12 +2,10 @@
 import { signUpSchema } from "@/lib/zod";
 import { SubmitButton } from "@/components/SubmitButton";
 import { signUpAction } from "@/lib/actions";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 
 export default function SignUpPage() {
-  const router = useRouter();
   const [error, setError] = useState<string>("");
 
   const handleFormSubmit = async (formData: FormData) => {
@@ -23,7 +21,6 @@ export default function SignUpPage() {
 
     const res = await signUpAction(formValues);
     if (res?.error) return setError(res.error);
-    router.push("/sign-in");
   };
 
   return (

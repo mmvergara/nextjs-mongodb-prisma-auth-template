@@ -5,11 +5,11 @@ import { AuthError } from "next-auth";
 import { hashSync } from "bcryptjs";
 import { signIn } from "@/auth";
 import prisma from "./prisma";
+import { redirect } from "next/navigation";
 
 export const signInAction = async (signInValues: SignInValues) => {
   try {
     await signIn("credentials", signInValues);
-    return { error: null };
   } catch (error) {
     console.log("ERRORR OCCURED SIGNIN ACTION", error);
     if (error instanceof AuthError) {
@@ -23,6 +23,7 @@ export const signInAction = async (signInValues: SignInValues) => {
     }
     throw error;
   }
+  redirect("/dashboard");
 };
 
 export const signUpAction = async (signUpValues: SignUpValues) => {
@@ -35,7 +36,6 @@ export const signUpAction = async (signUpValues: SignUpValues) => {
         password: hashSync(data.password, 10),
       },
     });
-    return { error: null };
   } catch (error) {
     console.log("ERROR OCCURED SIGNUP ACTION", error);
     if (error instanceof PrismaClientKnownRequestError) {
@@ -49,4 +49,5 @@ export const signUpAction = async (signUpValues: SignUpValues) => {
     }
     return { error: "An error occurred" };
   }
+  redirect("/sign-in");
 };
