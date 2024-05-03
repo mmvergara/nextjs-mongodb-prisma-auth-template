@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  background-color: hsl(0, 0%, 16%);
+  background-color: hsl(0, 0%, 14%);
 }
