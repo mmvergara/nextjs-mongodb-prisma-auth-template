@@ -17,7 +17,6 @@ model User {
   password      String
   image         String?
   accounts      Account[]
-  role         UserRole       @default(USER)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -45,9 +44,3 @@ model Account {
   @@unique([provider, providerAccountId])
 }
  
-
-
-enum UserRole {
-  USER
-  ADMIN
-}
