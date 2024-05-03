@@ -1,10 +1,10 @@
 "use server";
-import { signIn } from "@/auth";
+import { SignInValues, SignUpValues, signUpSchema } from "./zod";
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { AuthError } from "next-auth";
-import prisma from "./prisma";
-import { SignInValues, SignUpValues } from "./zod";
 import { hashSync } from "bcryptjs";
-import { PrismaClientValidationError } from "@prisma/client/runtime/library";
+import { signIn } from "@/auth";
+import prisma from "./prisma";
 
 export const signInAction = async (signInValues: SignInValues) => {
   try {
@@ -26,18 +26,27 @@ export const signInAction = async (signInValues: SignInValues) => {
 };
 
 export const signUpAction = async (signUpValues: SignUpValues) => {
+  const { data } = await signUpSchema.safeParseAsync(signUpValues);
+  if (!data) return { error: "Invalid data" };
   try {
     await prisma.user.create({
       data: {
-        ...signUpValues,
-        password: hashSync(signUpValues.password, 10),
+        ...data,
+        password: hashSync(data.password, 10),
       },
     });
+    return { error: null };
   } catch (error) {
-    const e = error as PrismaClientValidationError;
-    console.log(e);
-    console.log(e.cause);
-    console.log(e.message);
+    console.log("ERROR OCCURED SIGNUP ACTION", error);
+    if (error instanceof PrismaClientKnownRequestError) {
+      console.log(error.code);
+      switch (error.code) {
+        case "P2002":
+          return { error: "Email already exists" };
+        default:
+          return { error: "An error occurred" };
+      }
+    }
     return { error: "An error occurred" };
   }
 };
