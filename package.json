@@ -2,6 +2,8 @@
   "name": "nextjs-mongodb-prisma-auth-template",
   "version": "0.1.0",
   "private": true,
+  "author": "mmvergara",
+  "description": "Template repository for building a Next.js application with MongoDB, Prisma, and Next Auth authentication",
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
