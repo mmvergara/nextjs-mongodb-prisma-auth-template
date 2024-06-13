@@ -38,6 +38,9 @@ export default function SignUpPage() {
         <h1 className="text-3xl text-center rounded-sm font-semibold">
           Sign Up
         </h1>
+        <p className="text-xs text-center text-gray-400">
+          This is just a demo app, please use a fake email and password.
+        </p>
         <p className="text-red-500 text-center">{error}</p>
         <input
           type="text"
