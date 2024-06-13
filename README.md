@@ -3,7 +3,7 @@
 🗺️ This is a template repository for building a Next.js application with MongoDB, Prisma, and Next Auth authentication.
 
 <p align="center">
-<img src="remove_me.png" width="450">
+<img src="remove_mee.png" width="450">
 </p>
 
 ## Features
