@@ -1,5 +1,5 @@
 import type { NextAuthConfig } from "next-auth";
-import { signInSchema } from "./lib/zod";
+import { signInSchema } from "./lib/form-schemas";
 import { compare } from "bcryptjs";
 import Credentials from "next-auth/providers/credentials";
 import prisma from "./lib/prisma";
