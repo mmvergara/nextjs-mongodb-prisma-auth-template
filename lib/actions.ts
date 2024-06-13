@@ -11,12 +11,10 @@ export const signInAction = async (signInValues: SignInValues) => {
   try {
     await signIn("credentials", signInValues);
   } catch (error) {
-    console.log("ERRORR OCCURED SIGNIN ACTION", error);
     if (error instanceof AuthError) {
-      console.log(error.type);
       switch (error.type) {
         case "CredentialsSignin":
-          return { error: "Invalid credentials" };
+          return { error: "Invalid Credentials" };
         default:
           return { error: "An error occurred" };
       }
