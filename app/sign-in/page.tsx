@@ -51,7 +51,7 @@ export default function SignInPage() {
         />
         <SubmitButton
           pendingText="Signing in..."
-          className="p-2 mt-4 bg-[#256674] rounded-sm"
+          className="p-2 mt-4 bg-[hsl(191,52%,30%)] hover:bg-[hsl(191,52%,35%)] rounded-sm"
         >
           Sign In
         </SubmitButton>
