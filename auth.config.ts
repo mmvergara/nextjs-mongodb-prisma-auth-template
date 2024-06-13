@@ -11,7 +11,6 @@ export const authConfig = {
         // Validate the fields
         const validatedFields = signInSchema.safeParse(credentials);
         if (!validatedFields.success) {
-          console.log("Invalid fields", validatedFields.error);
           return null;
         }
 
@@ -21,14 +20,12 @@ export const authConfig = {
           where: { email },
         });
         if (!user) {
-          console.log("User not found");
           return null;
         }
 
         // Check the password
         const isPasswordMatch = await compare(password, user.password);
         if (!isPasswordMatch) {
-          console.log("Invalid password");
           return null;
         }
 
