@@ -1,4 +1,4 @@
-import { auth } from "@/auth";
+import { auth, signOut } from "@/auth";
 import Link from "next/link";
 
 const DashboardPage = async () => {
@@ -15,6 +15,14 @@ const DashboardPage = async () => {
       >
         {"<-"} Home
       </Link>
+      <form
+        action={async () => {
+          "use server";
+          signOut({ redirectTo: "/" });
+        }}
+      >
+        <button type="submit">sign Out</button>
+      </form>
     </main>
   );
 };
