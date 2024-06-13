@@ -1,5 +1,5 @@
 "use client";
-import { signUpSchema } from "@/lib/zod";
+import { signUpSchema } from "@/lib/form-schemas";
 import { SubmitButton } from "@/components/SubmitButton";
 import { signUpAction } from "@/lib/actions";
 import { useState } from "react";
