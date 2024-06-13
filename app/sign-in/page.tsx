@@ -21,21 +21,25 @@ export default function SignInPage() {
     <main className="flex items-center justify-center flex-col gap-4 pt-[10vh] text-white">
       <Link
         href="/"
-        className="bg-[hsl(0,0%,7%)] hover:bg-[hsl(0,0%,10%)] p-2 px-8 rounded-lg"
+        className="bg-zinc-800 hover:bg-zinc-900 p-2 px-8 rounded-lg"
       >
         {"<-"} Home
       </Link>
-      <h1 className="text-5xl text-center bg-[hsl(0,0%,7%)] p-4 rounded-sm font-semibold">
-        Sign In Page
-      </h1>
-      <p className="text-red-500">{error}</p>
-      <form action={handleFormSubmit} className="flex flex-col gap-2">
+
+      <form
+        action={handleFormSubmit}
+        className="flex flex-col gap-2 bg-zinc-800 p-10 rounded-md w-full max-w-[450px] mx-2"
+      >
+        <h1 className="text-3xl text-center rounded-sm font-semibold">
+          Sign In
+        </h1>
+        <p className="text-red-500">{error}</p>
         <input
           type="email"
           id="email"
           name="email"
           placeholder="Email"
-          className="p-2 px-4 rounded-md outline-none drop-shadow-sm bg-[hsl(0,0%,10%)]"
+          className="p-2 px-4 rounded-sm outline-none drop-shadow-sm bg-[hsl(0,0%,10%)]"
           required
         />
         <input
@@ -43,18 +47,21 @@ export default function SignInPage() {
           name="password"
           type="password"
           placeholder="●●●●●●●"
-          className="p-2 px-4 rounded-md outline-none drop-shadow-sm bg-[hsl(0,0%,10%)]"
+          className="p-2 px-4 rounded-sm outline-none drop-shadow-sm bg-[hsl(0,0%,10%)]"
         />
         <SubmitButton
           pendingText="Signing in..."
-          className="p-2 bg-[hsl(0,0%,7%)] rounded-lg"
+          className="p-2 mt-4 bg-[#256674] rounded-sm"
         >
           Sign In
         </SubmitButton>
+        <Link
+          href="/sign-up"
+          className="text-gray-400 text-center hover:underline"
+        >
+          Don't have an account? Sign up
+        </Link>
       </form>
-      <Link href="/sign-up" className="text-gray-400">
-        Don't have an account? Sign up
-      </Link>
     </main>
   );
 }
