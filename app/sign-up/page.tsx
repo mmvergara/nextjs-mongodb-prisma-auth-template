@@ -38,7 +38,7 @@ export default function SignUpPage() {
         <h1 className="text-3xl text-center rounded-sm font-semibold">
           Sign Up
         </h1>
-        <p className="text-red-500">{error}</p>
+        <p className="text-red-500 text-center">{error}</p>
         <input
           type="text"
           name="username"

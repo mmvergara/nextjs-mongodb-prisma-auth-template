@@ -33,7 +33,7 @@ export default function SignInPage() {
         <h1 className="text-3xl text-center rounded-sm font-semibold">
           Sign In
         </h1>
-        <p className="text-red-500">{error}</p>
+        <p className="text-red-500 text-center">{error}</p>
         <input
           type="email"
           id="email"
