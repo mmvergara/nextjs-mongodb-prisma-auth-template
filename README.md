@@ -21,6 +21,12 @@
 3. Set up your environment variables by creating a `.env` file based on the `.env.example` file.
 4. Start the development server: `npm run dev`
 
+## What you need to know
+
+- `auth.config.ts` `&&` `app/lib/actions.ts` handles auth logic
+- `/lib/form-schemas.ts` zod for validation
+- `middlware.ts` handles protected routes
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
