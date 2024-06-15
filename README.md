@@ -1,6 +1,6 @@
 # Next.js MongoDB Prisma Auth Template
 
-[**`🌐 App Demo`**](https://nextjs-mongodb-prisma-auth-template.vercel.app/)
+[**`🌐 App Demo`**](https://nextjs-mongodb-prisma-auth-template.vercel.app/) <br/>
 🗺️ This is a template repository for building a Next.js application with MongoDB, Prisma, and Next Auth authentication.
 
 <p align="center">
