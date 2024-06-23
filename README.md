@@ -21,7 +21,12 @@ This is a template repository for building a Next.js application with MongoDB, P
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Set up your environment variables by creating a `.env` `or` `.env.local` file based on the `.env.example` file.
-4. Start the development server: `npm run dev`
+4. Generate and DB Push Prisma Client
+```bash
+npx prisma generate
+npx prisma db push
+```
+5. Start the development server: `npm run dev`
 
 ## What you need to know
 
