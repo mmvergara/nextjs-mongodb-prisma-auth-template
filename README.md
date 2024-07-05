@@ -10,7 +10,7 @@ This is a template repository for building a Next.js application with MongoDB, P
 
 ## Features
 
-- 🚀 Authentication system with user registration, login, and logout functionality
+- 🚀 Next Auth **V5** with user registration, login, and logout functionality
 - 🚀 Protected Routes
 - 🚀 Next.js framework for server-side rendering and client-side rendering
 - 🚀 MongoDB for database storage
