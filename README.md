@@ -31,7 +31,7 @@ npx prisma db push
 ## What you need to know
 
 - `auth.config.ts` `&&` `app/lib/actions.ts` handles auth logic
-- `/lib/form-schemas.ts` zod for validation
+- `/lib/form-schemas.ts` zod for form validation
 - `middleware.ts` handles protected routes
 
 ## Contributing
