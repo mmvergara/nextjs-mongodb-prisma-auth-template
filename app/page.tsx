@@ -1,40 +1,58 @@
-import { auth } from "@/auth";
+import { auth, signOut } from "@/auth";
 import Link from "next/link";
+import {
+  isRedirectError,
+  redirect,
+} from "next/dist/client/components/redirect";
+import { SubmitButton } from "@/components/SubmitButton";
 
 export default async function Home() {
   const session = await auth();
   return (
-    <main className="flex items-center justify-center flex-col gap-4 pt-[10vh] text-white">
-      <h1 className="text-2xl text-center bg-zinc-900 p-4 px-8 rounded-sm font-semibold">
-        NextJS + MongoDB + Prisma + Auth Template
-      </h1>
-      <section className="flex gap-4 flex-col items-center justify-center bg-zinc-900 p-12 rounded-sm">
-        <p>Session : {session ? session?.user?.email : "No session"}</p>
+    <main>
+      <section className="main-container">
+        <h1 className="header-text">NextJS MongoDB Prisma Auth</h1>
+        <p>Current User : {session?.user?.email || "None"}</p>
+        {session?.user ? (
+          <form
+            action={async () => {
+              "use server";
+              try {
+                await signOut({ redirect: false });
+              } catch (err) {
+                if (isRedirectError(err)) {
+                  console.error(err);
+                  throw err;
+                }
+              } finally {
+                redirect("/");
+              }
+            }}
+          >
+            <SubmitButton
+              pendingText="Signing out..."
+              className="p-2 px-4 mt-4 bg-[hsl(191,52%,30%)] hover:bg-[hsl(191,52%,35%)] rounded-sm"
+            >
+              Sign Out
+            </SubmitButton>
+          </form>
+        ) : (
+          <Link href="/auth/sign-in">Sign In</Link>
+        )}
+        <Link href="/dashboard">Protected Page 🛡️</Link>
+        <div id="divider"></div>
         <Link
-          href="/sign-in"
-          className="p-2 bg-[hsl(191,52%,30%)] hover:bg-[hsl(191,52%,35%)] rounded-sm px-6 w-full text-center"
-        >
-          Sign In
-        </Link>
-
-        <Link
-          href="/dashboard"
-          className="p-2 bg-[hsl(191,52%,30%)] hover:bg-[hsl(191,52%,35%)] rounded-sm px-6 w-full text-center"
-        >
-          Dashboard Page (Protected)
-        </Link>
-        <a
           href="https://github.com/mmvergara/nextjs-mongodb-prisma-auth-template"
           target="_blank"
-          rel="noopener noreferrer"
-          className="flex gap-2 justify-center items-center bg-zinc-800 hover:bg-zinc-800 py-2 px-4 w-full"
+          rel="noreferrer noopener"
+          id="github-repo-link"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
             width="30"
-            height="30"
+            height="50"
             viewBox="0 0 64 64"
           >
             <path
@@ -43,7 +61,7 @@ export default async function Home() {
             ></path>
           </svg>
           Github Repository
-        </a>
+        </Link>
       </section>
     </main>
   );

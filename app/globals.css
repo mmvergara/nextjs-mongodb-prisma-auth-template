@@ -1,7 +1,125 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif !important;
+}
 
 body {
-  background-color: #1F6F8B
+  background-color: hsl(240, 4%, 9%);
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-text {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  background: none;
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(240, 4%, 12%);
+  padding: 2em 2em;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 2px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+  border-top: 5px;
+  border-width: 10px 0px 0px 0px;
+  border-style: solid;
+  border-color: #9faab8;
+}
+
+#github-repo-link {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 0;
+  align-items: center;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  background: none;
+  cursor: pointer;
+  color: #9faab8;
+}
+
+#github-repo-link:hover {
+  background-color: rgba(159, 170, 184, 0.1);
+}
+
+input {
+  padding: 1rem;
+  border-radius: 0.125rem;
+  outline: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: hsl(240, 3%, 9%);
+  border: 0;
+  font-size: 1rem;
+  color: white;
+  margin-top: 7px;
+  width: 300px;
+}
+
+button,
+a {
+  font-size: 16px;
+  padding: 1em;
+  background: none;
+  cursor: pointer;
+  color: white;
+  background: #9faab8;
+  border: none;
+  border-radius: 0.125em;
+  transition: background-color 0.3s;
+  width: 300px;
+  text-align: center;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-weight: bold;
+}
+
+button:hover,
+a:hover {
+  background: #8c99a9;
+}
+
+.home-link {
+  margin-bottom: 1em;
+}
+
+.auth-link {
+  background: transparent;
+  color: #9faab8;
+}
+
+.auth-link:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+#divider {
+  width: 70%;
+  height: 2px;
+  background-color: #9faab8;
+  margin: 1em 0;
+  border-radius: 100%;
 }
