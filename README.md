@@ -34,10 +34,14 @@ npx prisma db push
 - `/lib/form-schemas.ts` zod for form validation
 - `middleware.ts` handles protected routes
 
-## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+## More Starter Templates
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+- [React Supabase Auth Template 🌟](https://github.com/mmvergara/react-supabase-auth-template)
+- [React Supabase ShadCN Auth Template](https://github.com/mmvergara/react-supabase-shadcn-auth-template)
+- [NextJs MongoDB Prisma Auth Template 🌟](https://github.com/mmvergara/nextjs-mongodb-prisma-auth-template)
+- [NextJs Discord Bot Template 🌟](https://github.com/mmvergara/nextjs-discord-bot-boilerplate)
+- [React Firebase🔥 Auth Template 🌟](https://github.com/mmvergara/react-firebase-auth-template)
+- [Golang Postgres Auth Template](https://github.com/mmvergara/golang-postgresql-auth-template)
+- [Vue Supabase Auth Template](https://github.com/mmvergara/vue-supabase-auth-starter-template)
+- [Remix Drizzle Auth Template](https://github.com/mmvergara/remix-drizzle-auth-template)
